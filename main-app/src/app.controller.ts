@@ -11,7 +11,6 @@ export class AppController {
 
   @Get()
   calc(@Query('num') str): Observable<number> {
-    console.log(str);
     const numArr = str.split(',').map((item) => parseInt(item));
 
     this.logClient.emit('log', 'calc:' + numArr);

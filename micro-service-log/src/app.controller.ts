@@ -6,7 +6,7 @@ export class AppController {
   constructor() {}
 
   @EventPattern('log')
-  wordCountLog(text: string): void {
+  log(text: string): void {
     console.log(text);
   }
 }
