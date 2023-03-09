@@ -9,15 +9,15 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
         name: 'CALC_SERVICE',
         transport: Transport.TCP,
         options: {
+          // host: '改成你自己的宿主机 ip',
           port: 8888,
         },
       },
-    ]),
-    ClientsModule.register([
       {
         name: 'LOG_SERVICE',
         transport: Transport.TCP,
         options: {
+          // host: '改成你自己的宿主机 ip',
           port: 9999,
         },
       },

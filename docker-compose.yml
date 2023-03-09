@@ -1,0 +1,27 @@
+services:
+  main-app:
+    build:
+      context: ./main-app
+      dockerfile: ./Dockerfile
+    depends_on:
+      - ms-calc
+      - ms-log
+      - rabbitmq
+    ports:
+      - '3000:3000'
+  ms-calc:
+    build:
+      context: ./micro-service-calc
+      dockerfile: ./Dockerfile
+    ports:
+      - '8888:8888'
+  ms-log:
+    build:
+      context: ./micro-service-log
+      dockerfile: ./Dockerfile
+    ports:
+      - '9999:9999'
+  rabbitmq:
+    image: rabbitmq
+    ports:
+      - '5672:5672'
